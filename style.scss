@@ -1,0 +1,171 @@
+@import 'sass/config';
+@import 'sass/utilities';
+@import 'sass/form';
+
+// Navigation
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    border-bottom: 1px solid $primary;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+    opacity: .9;
+    padding: .7rem 2rem;
+
+    ul {
+        display: flex;
+    }
+
+    a {
+        color: #fff;
+        padding: .45rem;
+        margin: 0 .25rem;
+
+        &:hover {
+            color: $primary;
+        }
+    }
+}
+
+// Landing Section Scss
+.landing {
+    background: url(img/showcase.jpg) no-repeat center center;
+    background-size: cover;
+    height: 100vh;
+    position: relative;
+
+    &-inner {
+        height: 100%;
+        display: flex;
+        width: 80%;
+        margin: auto;
+        color: #fff;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        flex-direction: column;
+    }
+}
+
+// profiles Page
+.profile {
+    display: grid;
+    grid-template-columns: 2fr 4fr 2fr;
+    align-items: center;
+    padding: 1rem;
+    grid-gap: 2rem;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+}
+
+// Profile Page
+.profile-grid {
+    display: grid;
+    grid-template-areas: 'top top' 'about about' 'exp edu' 'github github';
+    grid-gap: 1rem;
+
+    .profile-top {
+        grid-area: top;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+
+        img {
+            width: 250px;
+        }
+
+        .icons a {
+            color: #fff;
+            margin: 0 .3rem;
+            transition: all .3s ease-in;
+
+            &:hover {
+                color: $dark;
+            }
+        }
+    }
+    
+    .profile-about {
+        grid-area: about;
+        text-align: center;
+
+        .skills {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+    }
+
+    .profile-exp {
+        grid-area: exp;
+    }
+    
+    .profile-edu {
+        grid-area: edu;
+    }
+
+    .profile-exp,
+    .profile-edu {
+
+        & > div {
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px dashed #ccc;
+
+            &:last-child {
+                border-bottom: none;
+            }
+        }
+
+        p {
+            margin: .5rem 0;
+        }
+    }
+    
+    .profile-github {
+        grid-area: github;
+
+        .repo {
+            display: flex;
+
+            & > div:first-child {
+                flex: 7;
+                flex-basis: 70%;
+            }
+            
+            & > div:last-child {
+                flex: 3;
+                flex-basis: 20%;
+            }
+        }
+    }
+}
+
+// Posts Pages
+.post-form-header {
+    padding: .5rem;
+}
+
+.post {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-gap: 2rem;
+    align-items: center;
+
+    & > div:first-child {
+        text-align: center;
+    }
+
+    img {
+        width: 150px;
+    }
+}
+
+// Responsive
+@import 'sass/mobile';
